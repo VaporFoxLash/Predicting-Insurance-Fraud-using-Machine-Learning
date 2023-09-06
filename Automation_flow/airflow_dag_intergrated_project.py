@@ -16,11 +16,11 @@ from airflow.providers.amazon.aws.operators.sns import SnsPublishOperator
 
 HOME_DIR = "/opt/airflow"
 
-#insert your mount folder
+# mount folder
 MOUNT_FOLDER = "/home/ubuntu/s3-drive"
 # ==============================================================
 
-# The default arguments for your Airflow, these have no reason to change for the purposes of this predict.
+# The default arguments for Airflow
 default_args = {
     'owner': 'airflow',
     'depends_on_past': False,
@@ -99,7 +99,7 @@ def determine_next_task(**context):
     else:
          return 'Failure_Notification'
 # The dag configuration ===========================================================================
-# Ensure your DAG calls on the success and failure functions above as it succeeds or fails.
+# Ensure DAG calls on the success and failure functions above as it succeeds or fails.
 dag = DAG(
     dag_id="data_pipeline",
     description="Data Pipeline DAG",
@@ -111,7 +111,7 @@ dag = DAG(
 )
 
 
-# Write your DAG tasks below ============================================================
+# DAG tasks below ============================================================
 process_data_task = BashOperator(
     task_id='process_data',
     bash_command=f'python {HOME_DIR}/s3-drive/Scripts/feature_engineering_script.py',
