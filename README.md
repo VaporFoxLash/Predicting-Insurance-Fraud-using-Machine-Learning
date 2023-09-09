@@ -3,6 +3,8 @@
 
 ## Insurance Claims Analysis
 
+## Contents
+
 This project aims to investigate insurance claims data, primarily focusing on identifying patterns related to fraudulent activities. The notebook uses a variety of data processing techniques, machine learning models, and visualization strategies to derive meaningful insights from the dataset.
 
 ## Dataset Overview
